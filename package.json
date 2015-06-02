@@ -1,0 +1,23 @@
+{
+  "name": "read-dbf",
+  "version": "1.0.0",
+  "description": "read dbf files",
+  "main": "index.js",
+  "dependencies": {
+    "shapefile": "^0.3.0",
+    "tape": "^4.0.0"
+  },
+  "devDependencies": {
+    "tap": "^1.2.0",
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "dbf",
+    "read"
+  ],
+  "author": "Tom MacWright",
+  "license": "ISC"
+}
