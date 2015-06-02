@@ -1,6 +1,12 @@
 var dbf = require('shapefile/dbf');
 
-module.exports = function(filename, callback) {
+module.exports = function(filename, opts, callback) {
+  var options = {};
+  if (!callback) {
+      callback = opts;
+  } else {
+      options = opts;
+  }
   var reader = dbf.reader(filename);
   function join(header, val) {
       var obj = {};
@@ -11,8 +17,13 @@ module.exports = function(filename, callback) {
   }
   reader.readHeader(function(error, header) {
     if (error) return callback(error);
+    if (options.lowercase) {
+        header.fields.forEach(function(field) {
+            field.name = field.name.toLowerCase();
+        });
+    }
     var rows = [];
-    function readAllRecords(callback) {
+    function readAllRecords() {
       (function readRecord() {
         reader.readRecord(function(error, record) {
           if (error) return callback(error);
@@ -28,6 +39,6 @@ module.exports = function(filename, callback) {
         });
       })();
     }
-    readAllRecords(callback);
+    readAllRecords();
   });
 };
