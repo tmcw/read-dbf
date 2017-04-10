@@ -4,11 +4,11 @@
   "description": "read dbf files",
   "main": "index.js",
   "dependencies": {
-    "shapefile": "^0.3.0",
+    "shapefile": "^0.6.2",
     "tape": "^4.0.0"
   },
   "devDependencies": {
-    "tap": "^1.2.0",
+    "tap": "^10.3.2",
     "tape": "^4.0.0"
   },
   "scripts": {
