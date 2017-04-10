@@ -1,5 +1,7 @@
 # read-dbf
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tmcw/read-dbf.svg)](https://greenkeeper.io/)
+
 Simpler interface for dbf reading. Use [mbostock/shapefile](https://github.com/mbostock/shapefile)
 if you want streaming: this is a non-streaming wrapper on top of it.
 
